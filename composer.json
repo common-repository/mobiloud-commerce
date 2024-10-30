@@ -1,0 +1,17 @@
+{
+	"name": "mobiloudsupport/woocommerce-integration",
+	"description": "A WooCommerce extension for MobiLoud WordPress plugin",
+	"type": "project",
+	"authors": [
+		{
+			"name": "Siddharth Thevaril",
+			"email": "siddharth.thevaril@gmail.com"
+		}
+	],
+	"require": {},
+	"require-dev": {
+	},
+	"autoload": {
+		"classmap": ["mlwoo/"]
+	}
+}

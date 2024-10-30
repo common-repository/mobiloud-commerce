@@ -1,0 +1,82 @@
+@mixin grid {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+@mixin grid-item--square {
+	position: relative;
+	width: 50%;
+	height: 0;
+	padding-bottom: 50%;
+	color: var( --font-color-body );
+}
+
+@mixin grid-item--normal {
+	position: relative;
+	width: 50%;
+	color: var( --font-color-body );
+	text-decoration: none;
+}
+
+@mixin grid-item-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 0.45rem;
+}
+
+.mlwoo {
+	&__grid {
+		@include grid;
+	}
+
+	&__grid-item--square {
+		@include grid-item--square;
+
+		&:nth-child( odd ) {
+			padding-left: 0;
+		}
+
+		&:nth-child( even ) {
+			padding-right: 0;
+		}
+	}
+
+	&__grid-item--normal {
+		@include grid-item--normal;
+
+		&:nth-child( odd ) {
+			padding-left: 0;
+		}
+
+		&:nth-child( even ) {
+			padding-right: 0;
+		}
+
+		.mlwoo__grid-item__wrapper {
+			position: relative;
+			top: 0;
+			left: 0;
+		}
+
+		.mlwoo__grid-item__wrapper-inner {
+			box-shadow: none;
+		}
+	}
+
+	&__grid-item__wrapper {
+		@include grid-item-wrapper;
+	}
+
+	&__grid-item__wrapper-inner {
+		position: relative;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100%;
+		border-radius: var( --radius );
+		box-shadow: var( --shadow );
+	}
+}

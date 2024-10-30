@@ -1,0 +1,43 @@
+@import '_global.scss';
+
+.mlwoo--thank-you {
+	background-color: var( --color-primary-2 );
+	min-height: 100vh;
+
+	.woocommerce-order-details__title,
+	.woocommerce-column__title {
+		color: var( --font-color-title );
+		font-family: var( --font-playfair );
+	}
+
+	.woocommerce-thankyou-order-details.order_details {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		line-height: 1.75;
+
+		@include card;
+	}
+
+	.woocommerce-table--order-details {
+		@include card;
+
+		text-align: left;
+		width: 100%;
+	}
+
+	.woocommerce-customer-details {
+		address {
+			@include card;
+			font-style: normal;
+		}
+
+		&--phone {
+			margin: 0;
+			border-top: 1px solid var( --silver );
+			border-bottom: 1px solid var( --silver );
+			padding: 0.5rem 0;
+			margin-top: 0.5rem;
+		}
+	}
+}

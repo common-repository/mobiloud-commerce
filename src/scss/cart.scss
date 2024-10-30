@@ -1,0 +1,223 @@
+@import "_global.scss";
+
+.mlwoo {
+
+}
+
+.mlwoo--cart {
+	.restore-item {
+		display: none;
+
+	}
+
+	.woocommerce-message {
+		padding: 0.5rem;
+		text-align: center;
+		border-radius: var( --radius );
+		background-color: var( --color-secondary-5 );
+		color: var( --color-primary-2 );
+		margin-bottom: 0.75rem;
+	}
+
+	.woocommerce-error {
+		margin-left: 0;
+		padding-left: 0;
+		list-style-type: none;
+		padding: 1rem;
+		border: 2px solid var(--color-secondary-2);
+		border-radius: var(--radius);
+		color: var(--color-secondary-2);
+		background-color: var(--color-primary-2);
+	}
+
+	.woocommerce-remove-coupon {
+		text-decoration: none;
+		color: var(--color-secondary-2);
+		font-weight: 700;
+	}
+
+	.woocommerce-cart-form__contents {
+		width: 100%;
+	}
+
+	.cart_item {
+		.mlwoo--cart__cart-item {
+			border-bottom: 1px solid var( --silver );
+			padding: 0.75rem 0;
+		}
+	}
+
+	&__empty-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}
+
+	&__cart-item {
+		display: flex;
+		position: relative;
+
+		.remove {
+			position: absolute;
+			bottom: 8px;
+			right: 0;
+			text-decoration: none;
+			color: var( --color-secondary-2 );
+			width: 19px;
+			height: 19px;
+			text-align: center;
+			line-height: 14px;
+			border-radius: 50%;
+			border: 2px solid var( --color-secondary-2 );
+			font-weight: 700;
+		}
+	}
+
+	&__item-meta {
+		flex: 1;
+	}
+
+	&__item-total-price {
+		font-weight: 700;
+	}
+
+	&__item-quantity {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		max-width: 115px;
+		margin-top: 0.5rem;
+		align-items: center;
+
+		input[type="number"] {
+			max-width: 48px;
+			padding: 5px 8px;
+			text-align: center;
+		}
+	}
+
+	&__quantity-input-control {
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		color: var( --color-secondary-3 );
+		font-family: var( --font-nunito );
+		font-weight: 700;
+		font-size: 1.5rem;
+		border: 2px solid var( --color-secondary-3 );
+		text-align: center;
+		line-height: 18px;
+
+		&:active {
+			background: var( --color-primary-2 );
+		}
+	}
+
+	&__coupon-section {
+		padding: 1rem 0;
+		padding-top: 2rem;
+
+		.coupon {
+			display: flex;
+			flex-flow: row wrap;
+		}
+
+		input[name="coupon_code"] {
+			flex: 1;
+			font-size: 1rem;
+			padding: 0.5rem 1rem;
+			font-size: 1rem;
+			margin-right: 1rem;
+		}
+
+		button[name="update_cart"] {
+			position: relative;
+			width: 100%;
+			font-size: 1rem;
+			padding: 0.5rem 1rem;
+			font-size: 1rem;
+			margin-bottom: 1rem;
+
+			&:disabled {
+				opacity: 0.35;
+			}
+		}
+
+		button[name="apply_coupon"] {
+			min-width: 95px;
+
+			.mlwoo--cart__apply-coupon-spinner {
+				display: none;
+				@include absolute-center;
+			}
+		}
+	}
+
+	&__item-thumbnail {
+		max-width: 64px;
+		margin-right: 0.75rem;
+
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	&__apply-coupon-text {
+		&--hidden {
+			display: none;
+		}
+	}
+
+	&__item-quantity-times-price {
+		.screen-reader-text {
+			display: none;
+		}
+	}
+
+	.cart_totals {
+		table {
+			width: 100%;
+			text-align: left;
+			padding: 1rem;
+			border: 2px solid var( --color-secondary-4 );
+			border-radius: var( --radius );
+			background-color: var( --color-primary-2 );
+		}
+
+		tr {
+			display: flex;
+			justify-content: space-between;
+
+			th:first-child,
+			td:first-child {
+				min-width: 100px;
+			}
+		}
+
+		.woocommerce-shipping-methods {
+			margin-top: 0;
+			padding-left: 1rem;
+		}
+	}
+
+	.woocommerce-shipping-calculator {
+		.mlwoo__input {
+			width: 100%;
+			font-size: 1rem;
+			padding: 0.5rem 1rem;
+			font-size: 1rem;
+		}
+	}
+
+	.wc-proceed-to-checkout {
+		margin-top: 1.5rem;
+
+		a {
+			color: var( --font-nunito );
+			text-decoration: none;
+		}
+	}
+}
